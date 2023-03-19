@@ -2,13 +2,14 @@
  
  -- Description--   
   
- Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+ Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order.
+ Essentially, rearrange the digits to create the highest possible number.
 
  Examples:
 
- Input: 42145 Output: 54421
- Input: 145263 Output: 654321
- Input: 123456789 Output: 987654321
+ Input: 42145      Output:  54421
+ Input: 145263     Output:  654321
+ Input: 123456789  Output:  987654321
     
 */
 
@@ -17,11 +18,20 @@
 /*  -- Solution № 1--  */
 
 function descendingOrder(n){
+  return parseInt(String(n).split('').sort().reverse().join(''))
+}
+
+
+
+/*  -- Solution № 2--  */
+
+function descendingOrder(n){
   let array = n.toString().split("");  
+  let a = array.length;
   let output = [];
   let max = 0;
   let x;
-  for (let i = 0; i < array.length + 7; i++) {    
+  for (let i = 0; i < a; i++) {    
     for (let j = 0; j < array.length; j++) {
       if (array[j] > max) {
         max = array[j];
@@ -34,10 +44,3 @@ function descendingOrder(n){
   }  
   return Number(output.toString().replace(/,/g, ""));
 }
-
-
-
-/*  -- Solution № 2--  */
-
-
-
