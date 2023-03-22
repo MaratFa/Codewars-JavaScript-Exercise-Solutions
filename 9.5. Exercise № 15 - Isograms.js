@@ -17,8 +17,24 @@
 /*  -- Solution № 1 --  */
 
 function isIsogram(str){
+	return new Set(str.toUpperCase()).size == str.length;
+}
+
+
+
+/*  -- Solution № 2 --  */
+
+function isIsogram(str){ 
+  return !/(\w).*\1/i.test(str)
+}
+
+
+
+/*  -- Solution № 3 --  */
+
+function isIsogram(str){
   for (let i = 0; i < str.length; i++) {
-    for (let j = 0; j < str.length; j++) {
+    for (let j = i; j < str.length; j++) {
       if (str.charAt(i).toUpperCase() === str.charAt(j + 1).toUpperCase()) {
         return false;
       }     
@@ -26,8 +42,3 @@ function isIsogram(str){
   }  
   return true;    
 }
-isIsogram("De")
-
-
-
-/*  -- Solution № 2 --  */
