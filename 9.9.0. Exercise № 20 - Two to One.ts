@@ -19,8 +19,7 @@
 
 
 // JavaScript
-
-/*  -- Solution № 1 (my solution) --  */
+// My solution 
 
 function longest(s1, s2) {
   let twoStrings = s1 + s2;
@@ -34,16 +33,17 @@ function longest(s1, s2) {
   return longest = longest.split('').sort().join('');
 }
 
-/*  -- Solution № 2 (best solution) --  */
 
 
+// JavaScript
+// Best solution 
 
+const longest = (s1, s2) => [...new Set(s1 + s2)].sort().join('')
 
 
 
 // TypeScript
-
-/*  -- Solution № 1 (my solution) --  */
+// My solution
 
 export const longest = (s1: string, s2: string): string => {
   let twoStrings: string = s1 + s2;
@@ -57,4 +57,11 @@ export const longest = (s1: string, s2: string): string => {
   return longest = longest.split('').sort().join('');
 }
 
-/*  -- Solution № 2 (best solution) --  */
+
+
+// TypeScript
+// Best solution 
+
+export const longest = (s1: string, s2: string): string =>
+  [...new Set([...s1, ...s2])].sort().join("");
+
