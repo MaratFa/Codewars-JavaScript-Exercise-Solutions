@@ -16,8 +16,6 @@
 
 
 
-
-
 // JavaScript
 // My solution 
 
